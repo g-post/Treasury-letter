@@ -1,0 +1,63 @@
+%Dit is een standalone TeX. Deze wordt gecompiled als main.tex een andere preamble heeft als dit bestand, bijvoorbeeld oneside op titelpagina, twoside in main.tex
+
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc} %Codering
+\usepackage[dutch]{babel} %Taalinstelling
+\usepackage{biblatex} %Om een of andere reden wil deze TeX niet compilen zonder deze package, deze is niet nodig
+\usepackage{csquotes} %Deze is ook nodig om errors tegen te gaan, hoewel hij zelf niet nodig is
+\usepackage[pages=some]{background}
+
+\usepackage{graphicx}
+\graphicspath{ {../Images/} }
+
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{colorlinks=false} %Links naar websites, bronnen, inhoudsopgave, pagina's etc.
+
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+\usepackage{titling} %Titels voor op de titelpagina
+\input{../Titelpagina/Definities.tex}
+
+\title{\titel}
+\author{\auteur}
+\date{\datum}
+%EIND VAN PREAMBLE
+
+
+\begin{document}
+%\backgroundsetup{contents=\includegraphics{3},angle=0,scale=0.15,opacity=0.5,vshift=195}
+%\backgroundsetup{contents=\includegraphics{2},angle=90,scale=0.205,opacity=0.5}
+\backgroundsetup{contents=\includegraphics{5},angle=0,scale=0.19,opacity=1,vshift=-400}
+\BgThispage
+\begin{titlepage}
+    \begin{center}
+    \vspace*{3cm}
+    {\Huge\thetitle}
+    
+    \vspace*{0.4cm}
+    \textnormal{\ondertitel}
+    \end{center}
+    
+    \raggedleft
+    \vfill
+    \textbf{Authors} \\
+    mr. \theauthor \\
+    mr. \begeleidertwee \\
+    mr. \begeleidereen \\
+
+    \vspace{\vertspace}
+    \textbf{Organization} \\
+    \organisatie \\
+    \mailorganisatie \\
+    \telorganisatie \\
+    \adres \\
+    The Netherlands
+    
+    \vspace{\vertspace}
+    %Versie \versie \\
+    Established by the management board on \thedate \\
+    Retroactively adapted from \terugwerkend \\
+    Valid untill \uittreden
+\end{titlepage}
+
+\end{document}

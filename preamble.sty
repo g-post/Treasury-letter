@@ -1,0 +1,42 @@
+\ProvidesPackage{preamble} %Betekent dat al onderstaande tekst wordt ingevoegd wanneer \usepackage{preamble} wordt gebruikt
+
+\usepackage[english,dutch]{babel}
+\usepackage[backend=biber,style=apa,sorting=nty,natbib]{biblatex}
+\addbibresource{bibliografie.bib}
+\DeclareLanguageMapping{dutch}{dutch-apa}
+%APA-richtlijnen en taalinstellingen
+
+\usepackage{graphicx}
+\graphicspath{ {./Images/} }
+%Om figuren in te voegen
+
+\usepackage{fancyhdr} %Voet- en kopteksten
+\usepackage{csquotes} %Quotes die Babel respecteren
+\usepackage{booktabs} %Tabeloptimalisatie en opmaak
+\usepackage{pdfpages} %Samenvoegen van PDF-bestanden
+\usepackage{lipsum} %Lorem ipsum
+\usepackage{color} %Tekstkleur
+\usepackage{microtype} %Tegen de underfull errors en voor veel betere justifying
+\usepackage[pages=some]{background} %Achtergrondafbeeldingen bij voorwoord e.d.
+\usepackage{comment} %Om delen van de tekst uit te schakelen
+\usepackage[toc,nonumberlist,nogroupskip]{glossaries} %Om woorden en acroniemen te definiëren in een woordenlijst
+
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{
+    colorlinks=true, %Geef kleur aan links
+    linkcolor=black, %href kleur
+    filecolor=cyan, %Lokale bestanden kleur
+    urlcolor=cyan, %URL kleur bijv in bibliografie
+    citecolor=black, %Kleur van het jaartal bij verwijzing
+    breaklinks=true, %Lange URL's mogen op meerdere regels staan
+    bookmarksopen=true} %Open in het PDF-programma het beeld waar je de hoofdstukken kunt selecteren
+%Links naar websites, bronnen, inhoudsopgave, pagina's etc.
+
+\input{./begrippenkader.tex} %Alle variabelen in het document als titel, datum, naam etc.
+\newcounter{artikel}[subsection]
+
+
+\title{\titel}
+\author{\auteur}
+\date{\datum}
+%Documenteigenschappen worden hier gekopieerd uit Definities.tex
